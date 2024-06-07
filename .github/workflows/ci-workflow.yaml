@@ -24,12 +24,11 @@ jobs:
   cd-pipeline:
     runs-on: ubuntu-latest
     needs: ci-pipeline
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     permissions:
       id-token: write
       pages: write
+    environment:
+      name: github-pages
     steps:
     - name: Deploy
       id: deployment
