@@ -17,4 +17,8 @@ jobs:
     - run: npm run typecheck
     - run: npm run test
     - run: npm run build
+    - name: Deploy
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: 'dist/'
       
